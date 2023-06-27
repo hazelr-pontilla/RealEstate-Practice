@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    All-Listings
+{% endblock %}
+
+
+{% block content %}
+
+<h3>All listings</h3>
+
+<ul>
+    {% for listing in listings %}
+        <li> 
+            <a href="{% url 'retrieve' listing.pk %}">
+                {{listing.address}}
+                <span>|</span>
+                <small><em>{{listing.created_at|timesince}} ago</em></small>
+            </a> 
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
