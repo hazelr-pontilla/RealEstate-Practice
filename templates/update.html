@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Update-listing: {{listing.pk}}
+{% endblock %}
+
+
+{% block content %}
+
+    <h3>Update listing</h3>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button>Submit</button>
+{% endblock %}

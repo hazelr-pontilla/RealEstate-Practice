@@ -15,4 +15,8 @@
     <p>Sqft:{{listing.sqrt}}</p>
     <p>Description: {{listing.description}}</p>
 
+    <a href="{% url 'update' listing.pk %}" onclick="return confirm('Do you want to update?')" >Update</a>
+    <span>|</span>
+    <a href="{% url 'delete' listing.pk %}" onclick="return confirm('Do you want to delete?')" >Delete</a>
+
 {% endblock %}

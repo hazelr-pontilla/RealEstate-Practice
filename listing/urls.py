@@ -6,5 +6,6 @@ urlpatterns = [
     path('', views.listings, name='all-listings'),
     path('<pk>/', views.retrieve, name='retrieve'),
     path('create', views.create, name='create'),
-    
+    path('update/<pk>/', views.update, name='update'),
+    path('delete/<pk>/', views.delete, name='delete'),
 ]

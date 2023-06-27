@@ -23,8 +23,24 @@ def retrieve(request, pk):
     listing = Listing.objects.get(id=pk)
     return render(request, 'retrieve.html', {'listing': listing})
 
-def update(request):
-    pass
+def update(request, pk):
+    listing = Listing.objects.get(id=pk)
+    form = ListingForm(instance=listing)
 
-def delete(request):
-    pass
+    if request.method == 'POST':
+        form = ListingForm(request.POST, instance=listing)
+        if form.is_valid():
+            form.save()
+            return redirect('/listing/')
+
+    context = {
+        'form': form,
+        'listing': listing
+    }
+    return render(request, 'update.html', context)
+
+    
+def delete(request,pk):
+    listing = Listing.objects.get(id=pk)
+    listing.delete()
+    return redirect('/listing/')
