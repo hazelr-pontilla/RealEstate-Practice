@@ -12,10 +12,11 @@
     <p>Price: $ {{listing.price}}</p>
     <p>Beds: {{listing.beds}}</p>
     <p>Baths: {{listing.baths}}</p>
-    <p>Sqft:{{listing.sqrt}}</p>
+    <p>Sqft: {{listing.sqrt}}</p>
+    <p>Image: <img src="{{listing.image}}" alt="{{listing.address}}"></p>
     <p>Description: {{listing.description}}</p>
 
-    <a href="{% url 'update' listing.pk %}" onclick="return confirm('Do you want to update?')" >Update</a>
+    <a href="{% url 'update' listing.pk %}">Update</a>
     <span>|</span>
     <a href="{% url 'delete' listing.pk %}" onclick="return confirm('Do you want to delete?')" >Delete</a>
 

@@ -9,8 +9,8 @@
 
     <h3>Update listing</h3>
 
-    <form method="POST">
+    <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{form.as_p}}
-        <button>Submit</button>
+        <button onclick="return confirm('Do you want to update?')" >Update</button>
 {% endblock %}

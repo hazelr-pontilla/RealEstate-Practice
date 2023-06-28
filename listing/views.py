@@ -13,10 +13,10 @@ def create(request):
     form = ListingForm()
 
     if request.method == 'POST':
-        form = ListingForm(request.POST)
+        form = ListingForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/listing/')
+            return redirect('/')
     return render(request, 'create.html', {'form': form})
 
 def retrieve(request, pk):
@@ -28,10 +28,10 @@ def update(request, pk):
     form = ListingForm(instance=listing)
 
     if request.method == 'POST':
-        form = ListingForm(request.POST, instance=listing)
+        form = ListingForm(request.POST, instance=listing, files=request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('/listing/')
+            return redirect('/')
 
     context = {
         'form': form,
@@ -43,4 +43,4 @@ def update(request, pk):
 def delete(request,pk):
     listing = Listing.objects.get(id=pk)
     listing.delete()
-    return redirect('/listing/')
+    return redirect('/')

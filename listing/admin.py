@@ -5,6 +5,6 @@ from .models import Listing
 # Register your models here. add here the model or table that you created for the datavase
 
 class ListingAdmin(admin.ModelAdmin):
-    list_display = ('id', 'address', 'price', 'beds', 'baths', 'sqrt', 'created_at')
+    list_display = ('id', 'address', 'price', 'beds', 'baths', 'sqrt', 'image', 'created_at')
 
 admin.site.register(Listing, ListingAdmin)

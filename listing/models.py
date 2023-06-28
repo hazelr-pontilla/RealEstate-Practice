@@ -7,7 +7,7 @@ class Listing(models.Model):
     beds = models.IntegerField()
     baths = models.IntegerField()
     sqrt = models.IntegerField()
-    # image = models.ImageField()
+    image = models.ImageField()
     created_at = models.DateTimeField(auto_now_add=True)
     description = models.TextField(blank=True)
 

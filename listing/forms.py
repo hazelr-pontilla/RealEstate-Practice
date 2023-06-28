@@ -10,5 +10,6 @@ class ListingForm(ModelForm):
             'beds',
             'baths',
             'sqrt',
+            'image',
             'description'
         ]
