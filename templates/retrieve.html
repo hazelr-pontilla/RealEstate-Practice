@@ -13,7 +13,14 @@
     <p>Beds: {{listing.beds}}</p>
     <p>Baths: {{listing.baths}}</p>
     <p>Sqft: {{listing.sqrt}}</p>
-    <p>Image: <img src="{{listing.image}}" alt="{{listing.address}}"></p>
+    <p>Image: <br>
+        <img 
+            src="{{listing.image}}" 
+            alt="{{listing.address}}"
+            width="400"
+            height="350"
+        >
+    </p>
     <p>Description: {{listing.description}}</p>
 
     <a href="{% url 'update' listing.pk %}">Update</a>
